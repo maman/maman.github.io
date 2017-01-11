@@ -4,61 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hi There! 👋</title>
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="preconnect" href="//cdnjs.cloudflare.com">
+    <link rel="prerender" href="https://www.salestockindonesia.com">
+    <link rel="prerender" href="https://github.com/maman">
+    <link rel="prerender" href="https://twitter.com/achmadmahardi">
+    <link rel="prerender" href="https://blog.mahardi.me">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <style>
-        html {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-image: -webkit-linear-gradient(transparent, transparent), url(https://media.giphy.com/media/26uflUz6WAyr68FcQ/giphy.gif);
-        }
-        body {
-            width: 500px;
-            margin: 0 auto;
-            background-color: #FFFFFF;
-            padding: 1rem;
-            box-shadow: 0 0 0 1px #000,
-                        15px 15px #000;
-            font-family: -apple-system,
-                BlinkMacSystemFont, 
-                "Segoe UI", 
-                Roboto, 
-                Oxygen-Sans, 
-                Ubuntu, 
-                Cantarell, 
-                "Helvetica Neue", 
-                sans-serif;
-        }
-        a {
-            text-decoration: none;
-            position: relative;
-            text-shadow: -1px -1px 0 #FFFFFF, 1px -1px 0 #FFFFFF, -1px 1px 0 #FFFFFF, 1px 1px 0 #FFFFFF;
-            background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, blue 1px, blue 2px, rgba(0, 0, 0, 0) 2px);
-        }
-        a:visited {
-            background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, #551A8B 1px, #551A8B 2px, rgba(0, 0, 0, 0) 2px);
-        }
-        @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
-            a {
-                background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, blue 1px, blue 1.5px, rgba(0, 0, 0, 0) 1.5px);
-            }
-            a:visited {
-                background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, #551A8B 1px, #551A8B 1.5px, rgba(0, 0, 0, 0) 1.5px);
-            }
-        }
-        #fancyheader #hidden {
-            display: none;
-            margin-left: .5rem;
-        }
-        #fancyheader:hover {
-            color: #b9b9b9;
-        }
-        #fancyheader:hover #hidden {
-            display: inline;
-            color: #000;
-        }
-    </style>
+    <link rel="stylesheet" href="/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.3/axios.min.js"></script>
 </head>
 <body>
@@ -83,46 +36,6 @@
         <source src="https://a.tumblr.com/tumblr_oat8zhArMY1u1vzz5o1.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio> -->
-    <script>
-        /**
-         * WHATNOTS
-         */
-        const fancy = document.getElementById('fancyheader');
-        const target = document.getElementById('projects');
-        const replacement = document.getElementById('replacementEl');
-
-        const createLink = (linkText, link, alt) => {
-            const li = document.createElement('li');
-            const a = document.createElement('a');
-            const text = document.createTextNode(linkText);
-            a.setAttribute('href', link);
-            a.setAttribute('target', '_blank');
-            a.setAttribute('rel', 'noopener noreferrer');
-            if (alt) {
-                a.setAttribute('alt', alt);
-            }
-            a.appendChild(text);
-            li.appendChild(a);
-            return li;
-        }
-
-        axios.get('https://gh-pinned-repos.now.sh/?username=maman')
-            .then(result => {
-                target.removeChild(replacement);
-                const data = result.data;
-                data.map(project => Object.assign({}, project, { stars: project.stars.length ? project.stars : 0 }))
-                    .sort((a, b) => b.stars - a.stars)
-                    .forEach(project => {
-                        const link = createLink(`${project.repo}`, `https://github.com/maman/${project.repo}`, project.description);
-                        target.appendChild(link);
-                    });
-            })
-            .catch(err => {
-                target.removeChild(replacement);
-                const link = createLink('cannot load pinned repos', 'https://github.com/maman');
-                target.appendChild(link);
-                console.error(err);
-            })
-    </script>
+    <script src="/script.js"></script>
 </body>
 </html>
