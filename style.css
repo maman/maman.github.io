@@ -3,7 +3,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: -webkit-linear-gradient(transparent, transparent), url(https://media.giphy.com/media/26uflUz6WAyr68FcQ/giphy.gif);
+    background-image: -webkit-linear-gradient(transparent, transparent), url('/bg.gif');
 }
 body {
     background-color: #FFFFFF;
