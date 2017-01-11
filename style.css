@@ -3,7 +3,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: -webkit-linear-gradient(transparent, transparent), url('/bg.gif');
+    background-image: -webkit-linear-gradient(transparent, transparent), url('https://cdn.rawgit.com/maman/maman.github.io/156c935f/bg.gif');
 }
 body {
     background-color: #FFFFFF;
