@@ -1,6 +1,5 @@
-/**
- * WHATNOTS
- */
+import axios from 'axios';
+
 const fancy = document.getElementById('fancyheader');
 const target = document.getElementById('projects');
 const replacement = document.getElementById('replacementEl');

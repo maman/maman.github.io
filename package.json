@@ -1,0 +1,32 @@
+{
+  "name": "maman-website",
+  "version": "1.0.0",
+  "description": "Achmad Mahardi's website. beautifully overengineered.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maman/maman.github.io.git"
+  },
+  "author": "Achmad Mahardi <achmad@mahardi.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maman/maman.github.io/issues"
+  },
+  "homepage": "https://github.com/maman/maman.github.io#readme",
+  "devDependencies": {
+    "auto-reload-brunch": "^2.7.1",
+    "babel-brunch": "^6.0.6",
+    "brunch": "^2.9.1",
+    "css-brunch": "^2.6.1",
+    "cssnano": "^3.10.0",
+    "cssnano-brunch": "^1.1.8",
+    "javascript-brunch": "^2.0.0",
+    "uglify-js-brunch": "^2.0.1"
+  },
+  "dependencies": {
+    "axios": "^0.15.3"
+  }
+}
