@@ -1,7 +1,6 @@
 /**
  * WHATNOTS
  */
-const fancy = document.getElementById('fancyheader');
 const target = document.getElementById('projects');
 const replacement = document.getElementById('replacementEl');
 
@@ -20,14 +19,14 @@ const createLink = (linkText, link, alt) => {
     return li;
 }
 
-axios.get('https://gh-pinned-repos.now.sh/?username=maman')
+axios.get('https://powerful-hollows-49108.herokuapp.com')
     .then(result => {
         target.removeChild(replacement);
         const data = result.data;
         data.map(project => Object.assign({}, project, { stars: project.stars.length ? project.stars : 0 }))
             .sort((a, b) => b.stars - a.stars)
             .forEach(project => {
-                const link = createLink(`${project.repo}`, `https://github.com/maman/${project.repo}`, project.description);
+                const link = createLink(`${project.name}`, project.href, `${project.user}/${project.name}`);
                 target.appendChild(link);
             });
     })
