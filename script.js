@@ -19,7 +19,7 @@ const createLink = (linkText, link, alt) => {
     return li;
 }
 
-axios.get('https://powerful-hollows-49108.herokuapp.com')
+axios.get('https://pinned.berrysauce.dev/get/maman')
     .then(result => {
         target.removeChild(replacement);
         const data = result.data;
